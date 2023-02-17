@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -55,12 +56,16 @@ class Login extends StatelessWidget {
                             style: const TextStyle(fontSize: 14),
                             children: <TextSpan>[
                               TextSpan(
-                                text: 'Register now!',
-                                style: TextStyle(
-                                    color: Colors.pink[600],
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14),
-                              )
+                                  text: 'Register now!',
+                                  style: TextStyle(
+                                      color: Colors.pink[600],
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () => {
+                                          Navigator.pushReplacementNamed(
+                                              context, '/register')
+                                        })
                             ]),
                       )
                     ],
