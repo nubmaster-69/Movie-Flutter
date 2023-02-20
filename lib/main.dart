@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/authenticate/login.dart';
 import 'package:flutter_application/authenticate/register.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application/util/ui_data.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -19,10 +20,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: Colors.lightBlue),
       routes: {
-        '/login': (BuildContext context) => const Login(),
-        '/register': (BuildContext context) => const Register()
+        UIData.route_login: (BuildContext context) => const LoginScreen(),
+        UIData.route_register: (BuildContext context) => const RegisterScreen()
       },
-      home: const Login(),
+      home: const LoginScreen(),
     );
   }
 }
