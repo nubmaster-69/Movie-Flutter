@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/authenticate/login.dart';
 import 'package:flutter_application/authenticate/register.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application/home/home.dart';
 import 'package:flutter_application/util/ui_data.dart';
 
 void main() {
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         UIData.route_login: (BuildContext context) => const LoginScreen(),
         UIData.route_register: (BuildContext context) => const RegisterScreen()
       },
-      home: const LoginScreen(),
+      home: const HomePage(),
     );
   }
 }

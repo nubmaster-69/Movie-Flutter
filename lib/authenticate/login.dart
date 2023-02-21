@@ -117,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ));
   }
 
-  void login(String username, String password) {
+  void login(String username, String password) async {
     if (username.isEmpty) {
       showDialog(
           context: context,
@@ -151,6 +151,25 @@ class _LoginScreenState extends State<LoginScreen> {
         )
       ],
     );
+  }
+
+  void showLoadingDialog() {
+    AlertDialog alert = AlertDialog(
+      content: Row(
+        children: [
+          const CircularProgressIndicator(),
+          Container(
+            margin: const EdgeInsets.only(left: 7),
+            child: const Text("Loading..."),
+          ),
+        ],
+      ),
+    );
+
+    showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (context) => alert);
   }
 
   void switchToRegisterScreen() {
